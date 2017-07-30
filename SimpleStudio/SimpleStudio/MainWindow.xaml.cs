@@ -28,6 +28,11 @@ namespace MinimalStudio
         public MainWindow()
         {
             InitializeComponent();
+            string code = SimpleStudio.Properties.Settings.Default.CodeTextBoxString;
+            if (code.Count() > 0)
+            {
+                Code_TextBox.Text = code;
+            }
         }
 
         private void Code_TextBox_MouseWheel(object sender, MouseWheelEventArgs e)
@@ -90,6 +95,12 @@ namespace MinimalStudio
         private void Code_TextBox_KeyUp(object sender, KeyEventArgs e)
         {
             if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.Enter) CompileAndRunCode(Code_TextBox.Text);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SimpleStudio.Properties.Settings.Default.CodeTextBoxString = Code_TextBox.Text;
+            SimpleStudio.Properties.Settings.Default.Save();
         }
     }
 

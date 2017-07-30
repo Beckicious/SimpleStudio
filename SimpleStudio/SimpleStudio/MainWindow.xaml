@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MinimalStudio"
         mc:Ignorable="d"
-        Title="Simple Studio" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+        Title="Simple Studio" Height="350" Width="525" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid>
         <local:BetterTextBox x:Name="Code_TextBox" TextWrapping="NoWrap" AcceptsReturn="True" AcceptsTab="True" TabSize="4" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Courier New" FontSize="15" MouseWheel="Code_TextBox_MouseWheel" IsTabStop="False" AllowDrop="False" Text="using System;&#xA;&#xA;namespace BirdWorld&#xA;{&#xA;    class Ron&#xA;    {&#xA;        static void Main(string[] args)&#xA;        {&#xA;            Console.WriteLine(&quot;Becky lemme smash!&quot;);&#xA;            Console.ReadLine();&#xA;        }&#xA;    }&#xA;}" KeyUp="Code_TextBox_KeyUp"/>
         <Button x:Name="Compile_Button" Content="GO" HorizontalAlignment="Right" Margin="0,0,19,19" VerticalAlignment="Bottom" Width="40" BorderBrush="{x:Null}" VerticalContentAlignment="Center" Height="28" Background="#FF9AFF5F" FontFamily="Courier New" FontSize="21" FontWeight="Bold" Click="Compile_Button_Click"/>
